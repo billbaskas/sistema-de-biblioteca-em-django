@@ -1,0 +1,12 @@
+{% extends "biblioteca/base.html" %}
+{% block title %}Confirmar exclusão{% endblock %}
+{% block content %}
+  <h1>Confirmar exclusão</h1>
+  <p>Deseja realmente excluir <strong>{{ objeto }}</strong>?</p>
+  {% if aviso %}<p class="msg warning">{{ aviso }}</p>{% endif %}
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-vermelho">Sim, excluir</button>
+    <a class="btn btn-cinza" href="{% url voltar %}">Cancelar</a>
+  </form>
+{% endblock %}

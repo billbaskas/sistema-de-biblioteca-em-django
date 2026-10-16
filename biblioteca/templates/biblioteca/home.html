@@ -1,0 +1,14 @@
+{% extends "biblioteca/base.html" %}
+{% block title %}Início{% endblock %}
+{% block content %}
+  <h1>Sistema de Biblioteca</h1>
+  <p>Cadastre autores e os livros escritos por eles.</p>
+  <div class="cards">
+    <div class="card"><strong>{{ total_autores }}</strong> autores</div>
+    <div class="card"><strong>{{ total_livros }}</strong> livros</div>
+  </div>
+  <p style="margin-top:24px">
+    <a class="btn btn-verde" href="{% url 'autor_criar' %}">+ Novo autor</a>
+    <a class="btn btn-verde" href="{% url 'livro_criar' %}">+ Novo livro</a>
+  </p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "biblioteca/base.html" %}
+{% block title %}{{ autor.nome }}{% endblock %}
+{% block content %}
+  <h1>{{ autor.nome }}</h1>
+  <p><strong>Nacionalidade:</strong> {{ autor.nacionalidade }}</p>
+  <h3>Livros deste autor</h3>
+  <ul>
+    {% for livro in autor.livros.all %}
+      <li>{{ livro.titulo }} ({{ livro.ano_publicacao }})</li>
+    {% empty %}
+      <li>Nenhum livro cadastrado.</li>
+    {% endfor %}
+  </ul>
+  <a class="btn btn-cinza" href="{% url 'autor_listar' %}">Voltar</a>
+{% endblock %}
